@@ -1,3 +1,5 @@
+book ="running-config.cfg"
+
 book ='running-config.cfg'
 with open(book, 'r') as fd:
   words = fd.read().split()
@@ -15,4 +17,11 @@ with open(book, 'r') as fd:
       if str == "nameif" in g:
         l.append(key,value)
      print("The given list is",l)
-list_ifname_ip(
+     """ This is the program for Task 2 """
+     for k in words:
+       k=  k.replace('192', '10') # I am replacing the value 192 with 10 by using inbuilt replace function
+       k = k.replace('172', '10')  # I am replacing the value 192 with 10 by using inbuilt replace function
+       k = k.replace("255.255.0.0","255.0.0.0")
+       k = k.replace("255.255.225.0","255.0.0.0")
+     print(k)
+list ifname_ip()
